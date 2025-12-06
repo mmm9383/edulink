@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إديولينك - مقدمة في البرمجة</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'cairo': ['Cairo', 'Helvetica', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+ <style>
+    * {
+  font-family: 'Cairo', Helvetica, sans-serif;
+}
+
+.skyrise-course-login-btn {
+  background: linear-gradient(135deg, rgba(6, 110, 183, 1) 0%, rgba(5, 92, 152, 1) 100%);
+}
+
+.skyrise-course-login-btn:hover {
+  background: linear-gradient(135deg, rgba(6, 110, 183, 0.9) 0%, rgba(5, 92, 152, 0.9) 100%);
+}
+
+.skyrise-course-subscribe-btn {
+  background: linear-gradient(135deg, rgba(15, 186, 30, 1) 0%, rgba(13, 169, 27, 1) 100%);
+}
+
+.skyrise-course-subscribe-btn:hover {
+  background: linear-gradient(135deg, rgba(15, 186, 30, 0.9) 0%, rgba(13, 169, 27, 0.9) 100%);
+}
+
+.skyrise-course-gradient-line {
+  background: linear-gradient(180deg, rgba(6, 110, 183, 1) 0%, rgba(15, 186, 30, 1) 100%);
+}
+
+.skyrise-course-footer-gradient {
+  background: linear-gradient(180deg, rgba(5, 92, 152, 1) 0%, rgba(4, 74, 122, 1) 100%);
+}
+
+.skyrise-course-course-card-gradient {
+  background: linear-gradient(180deg, rgba(6, 110, 183, 0.1) 0%, rgba(15, 186, 30, 0.1) 100%);
+}
+
+.skyrise-course-bg-gradient-radial {
+  background: radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 70%);
+}
+
+.skyrise-course-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.skyrise-course-accordion-content.open {
+  max-height: 1000px;
+}
+
+.skyrise-course-accordion-content:not(.skyrise-course-hidden) {
+  max-height: 1000px;
+}
+
+.skyrise-course-accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.skyrise-course-accordion-trigger[data-expanded="true"] .skyrise-course-accordion-icon {
+  transform: rotate(0deg);
+}
+
+.skyrise-course-accordion-trigger[data-expanded="false"] .skyrise-course-accordion-icon {
+  transform: rotate(-90deg);
+}
+
+.skyrise-course-input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 110, 183, 0.1);
+}
+
+.skyrise-course-button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skyrise-course-a {
+  text-decoration: none;
+}
+
+.skyrise-course-span.skyrise-course-inline-flex.skyrise-course-px-4.skyrise-course-py-2.skyrise-course-bg-white\/60.skyrise-course-rounded-lg.skyrise-course-border.skyrise-course-border-gray-200.skyrise-course-text-\[\#066eb7\].skyrise-course-font-semibold.skyrise-course-text-sm {
+    width: max-content;
+}
+
+.skyrise-course-flex.skyrise-course-flex-col.skyrise-course-gap-2.skyrise-course-relative.skyrise-course-self-stretch.skyrise-course-w-full {
+    direction: ltr;
+}
+
+.skyrise-course-accordion-item.skyrise-course-flex.skyrise-course-flex-col.skyrise-course-items-start.skyrise-course-relative.skyrise-course-self-stretch.skyrise-course-w-full.skyrise-course-bg-white.skyrise-course-rounded-\[14px\].skyrise-course-overflow-hidden.skyrise-course-border.skyrise-course-border-gray-200.skyrise-course-shadow-sm {
+    direction: ltr;
+}
+
+@media (max-width: 1024px) {
+  .lg\:skyrise-course-sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .skyrise-course-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .skyrise-course-hero-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.skyrise-course-html {
+  scroll-behavior: smooth;
+}
+
+.skyrise-course-::-webkit-scrollbar {
+  width: 8px;
+}
+
+.skyrise-course-::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.skyrise-course-::-webkit-scrollbar-thumb {
+  background: #066eb7;
+  border-radius: 4px;
+}
+
+.skyrise-course-::-webkit-scrollbar-thumb:hover {
+  background: #055a94;
+}
+
+.skyrise-course-::selection {
+  background: rgba(6, 110, 183, 0.2);
+}
+
+.skyrise-course-shadow-sm {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skyrise-course-shadow-lg {
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
+}
+  </style>
+</head>
+<body class="font-cairo bg-white">
+  <div class="flex flex-col items-center w-full relative bg-white">
+    
+    <!-- Header -->
+    <header class="flex flex-col w-full items-center justify-center px-4 md:px-20 py-4 bg-white/80 border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm">
+      <div class="flex items-center justify-between w-full flex-wrap gap-4">
+        <nav class="flex items-center gap-4 md:gap-6 flex-1 flex-wrap">
+          <div class="flex items-start gap-2 flex-wrap">
+            <button class="flex items-center gap-2.5 px-4 md:px-6 py-3 rounded-[14px] text-white text-sm login-btn">
+              <span>تسجيل الدخول</span>
+              <i data-lucide="log-in" class="w-4 h-4"></i>
+            </button>
+
+            <div class="flex items-center justify-center gap-2">
+              <button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100">
+                <i data-lucide="bell" class="w-5 h-5 text-gray-600"></i>
+              </button>
+
+              <button class="flex h-9 items-center justify-center gap-2 px-3 rounded-lg hover:bg-gray-100">
+                <span class="text-gray-600 text-sm">EN</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-gray-600"></i>
+              </button>
+            </div>
+
+            <div class="relative w-full md:w-[228px] h-[46px]">
+              <input
+                type="text"
+                placeholder="ابحث عن دورة أو معلم..."
+                class="w-full h-full px-4 pr-10 bg-gray-50/80 rounded-[14px] border border-gray-200/50 text-gray-600 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+              />
+              <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+            </div>
+          </div>
+
+          <div class="hidden lg:flex items-center gap-6">
+            <button class="flex items-center gap-1 bg-transparent border-none cursor-pointer hover:text-blue-600">
+              <span class="font-medium text-gray-800 text-base">الرئيسية</span>
+            </button>
+            <button class="flex items-center gap-1 bg-transparent border-none cursor-pointer hover:text-blue-600">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              <span class="font-medium text-gray-800 text-base">من نحن</span>
+            </button>
+            <button class="flex items-center gap-1 bg-transparent border-none cursor-pointer hover:text-blue-600">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              <span class="font-medium text-gray-800 text-base">البرامج التعليمية</span>
+            </button>
+            <button class="flex items-center gap-1 bg-transparent border-none cursor-pointer hover:text-blue-600">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+              <span class="font-medium text-gray-800 text-base">الدعم</span>
+            </button>
+          </div>
+
+          <button class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100" id="mobile-menu-btn">
+            <i data-lucide="menu" class="w-6 h-6 text-gray-700"></i>
+          </button>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-[#066eb7] text-xl md:text-2xl">إديولينك</span>
+          <i data-lucide="graduation-cap" class="w-8 h-8 md:w-10 md:h-10 text-[#066eb7]"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="flex flex-col w-full items-start relative">
+      
+      <!-- Hero Section -->
+      <section class="flex w-full items-start justify-end gap-2.5 px-4 md:px-20 py-12 md:py-[78px] relative bg-[#f6f7fa] overflow-hidden">
+        <div class="flex flex-col w-full md:w-[650px]   gap-8 md:gap-[42px] relative z-10">
+          <div class="flex flex-col   gap-6 md:gap-8 relative self-stretch w-full">
+            <div class="flex flex-col   gap-4 md:gap-6 relative self-stretch w-full">
+              <span class="inline-flex px-4 py-2 bg-white/60 rounded-lg border border-gray-200 text-[#066eb7] font-semibold text-sm">
+                CS101
+              </span>
+
+              <h1 class="font-bold text-gray-900 text-3xl md:text-5xl leading-tight md:leading-[60px] text-right">
+                مقدمة في البرمجة
+              </h1>
+
+              <p class="font-normal text-gray-600 text-lg md:text-xl leading-relaxed md:leading-[35px] text-right">
+                ابدأ رحلتك في عالم البرمجة مع دورة شاملة تجمع بين الأساسيات والتطبيق العملي.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 md:gap-8 relative">
+              <div class="flex items-center gap-2">
+                <span class="font-normal text-gray-500 text-sm md:text-[15px]">طالب مسجل</span>
+                <span class="font-semibold text-gray-900 text-base md:text-[17px]">١,٢٤٥</span>
+                <i data-lucide="users" class="w-5 h-5 text-gray-600"></i>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="font-normal text-gray-500 text-sm">(٢٣٥ تقييم)</span>
+                <span class="font-semibold text-gray-900 text-base md:text-[17px]">٤.٩</span>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 relative">
+            <button class="w-36 md:w-40 px-4 py-3 md:py-4 bg-white rounded-lg border-2 border-[#066eb7] font-bold text-[#066eb7] text-base md:text-[17px] hover:bg-blue-50 transition-colors">
+              أضف للسلة
+            </button>
+
+            <button class="w-36 md:w-40 px-4 py-3 md:py-4 rounded-lg font-bold text-white text-base md:text-[17px] subscribe-btn hover:opacity-90 transition-opacity">
+              اشترك الآن
+            </button>
+          </div>
+        </div>
+
+        <div class="absolute top-0 right-0 w-[300px] md:w-[400px] h-[300px] md:h-[400px] rounded-full blur-3xl bg-gradient-radial from-[#066eb7] to-transparent opacity-[0.04]"></div>
+        <div class="absolute left-0 bottom-0 w-[200px] md:w-[300px] h-[200px] md:h-[300px] rounded-full blur-3xl bg-gradient-radial from-[#0fba1e] to-transparent opacity-[0.04]"></div>
+      </section>
+
+      <!-- Main Content Section -->
+      <section class="flex flex-col items-start gap-2.5 px-4 md:px-20 py-8 md:py-12 relative bg-white w-full">
+        <div class="flex flex-col lg:flex-row items-start justify-end gap-8 lg:gap-[39px] relative w-full max-w-[1280px] mx-auto">
+          
+          <!-- Left Content -->
+          <div class="flex flex-col items-start relative flex-1 w-full">
+            
+            <!-- What You'll Learn -->
+            <div class="flex flex-col items-start gap-8 md:gap-10 px-4 md:px-12 py-8 md:py-16 relative self-stretch w-full bg-white">
+              <div class="flex flex-col   gap-6 md:gap-8 relative self-stretch w-full">
+                <div class="flex flex-col   gap-3 relative">
+                  <h2 class="font-bold text-gray-900 text-2xl md:text-[32px] leading-tight md:leading-[48px]">
+                    ماذا ستتعلم؟
+                  </h2>
+                  <div class="w-20 h-1.5 rounded-full gradient-line"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative self-stretch w-full">
+                  <div class="flex items-start justify-end gap-4 relative">
+                    <div class="flex flex-col   gap-1 relative flex-1">
+                      <div class="font-bold text-gray-900 text-base md:text-[17px]">كتابة أول مشاريعك</div>
+                      <div class="font-normal text-gray-600 text-sm md:text-[15px]">بناء مشاريع حقيقية من البداية للنهاية</div>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                      <i data-lucide="check-circle-2" class="w-6 h-6 text-[#066eb7]"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-start justify-end gap-4 relative">
+                    <div class="flex flex-col   gap-1 relative flex-1">
+                      <div class="font-bold text-gray-900 text-base md:text-[17px]">فهم أساسيات البرمجة</div>
+                      <div class="font-normal text-gray-600 text-sm md:text-[15px]">تعلم المفاهيم الأساسية للبرمجة والخوارزميات</div>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                      <i data-lucide="check-circle-2" class="w-6 h-6 text-[#066eb7]"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-start justify-end gap-4 relative">
+                    <div class="flex flex-col   gap-1 relative flex-1">
+                      <div class="font-bold text-gray-900 text-base md:text-[17px]">العمل على أمثلة عملية</div>
+                      <div class="font-normal text-gray-600 text-sm md:text-[15px]">تطبيق ما تعلمته على حالات واقعية</div>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                      <i data-lucide="check-circle-2" class="w-6 h-6 text-[#066eb7]"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-start justify-end gap-4 relative">
+                    <div class="flex flex-col   gap-1 relative flex-1">
+                      <div class="font-bold text-gray-900 text-base md:text-[17px]">حل المشكلات البرمجية</div>
+                      <div class="font-normal text-gray-600 text-sm md:text-[15px]">تطوير مهارات التفكير المنطقي والتحليلي</div>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                      <i data-lucide="check-circle-2" class="w-6 h-6 text-[#066eb7]"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Course Content -->
+            <div class="flex flex-col gap-8 md:gap-10 px-4 md:px-12 py-8 md:py-16 relative self-stretch w-full bg-[#f6f7fa]">
+              <div class="flex flex-col   gap-6 md:gap-8 relative self-stretch w-full">
+                <div class="flex flex-col   gap-3 relative">
+                  <h2 class="font-bold text-gray-900 text-2xl md:text-[32px] leading-tight md:leading-[48px]">
+                    محتوى الدورة
+                  </h2>
+                  <div class="w-20 h-1.5 rounded-full gradient-line"></div>
+                </div>
+
+                <div class="flex flex-col items-start gap-4 relative self-stretch w-full" id="course-modules">
+                  <!-- Module 1 -->
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[105px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="true">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon"></i>
+                      <div class="flex h-auto md:h-[52px] items-center justify-end gap-4 relative flex-1">
+                        <div class="flex flex-col   gap-1 relative">
+                          <div class="font-bold text-gray-900 text-base md:text-lg">الوحدة الأولى: مقدمة في البرمجة</div>
+                          <div class="flex items-center gap-4 text-gray-500 text-sm">
+                            <span>٢ ساعة</span>
+                            <span>•</span>
+                            <span>8 دروس</span>
+                          </div>
+                        </div>
+                        <div class="flex w-10 h-10 items-center justify-center bg-blue-50 rounded-lg">
+                          <span class="font-bold text-[#066eb7] text-base">1</span>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="accordion-content flex flex-col items-start relative self-stretch w-full bg-gray-50/50 border-t border-gray-200">
+                      <div class="flex h-[60px] items-center justify-between px-4 md:px-6 py-0 relative self-stretch w-full border-b border-gray-200">
+                        <div class="flex items-center gap-2 relative">
+                          <span class="text-gray-500 text-sm">١٥ دقيقة</span>
+                          <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center gap-3 relative">
+                          <span class="text-gray-900 text-sm md:text-[15px]">مرحبا بك في عالم البرمجة</span>
+                          <i data-lucide="play-circle" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                      <div class="flex h-[60px] items-center justify-between px-4 md:px-6 py-0 relative self-stretch w-full border-b border-gray-200">
+                        <div class="flex items-center gap-2 relative">
+                          <span class="text-gray-500 text-sm">٢٠ دقيقة</span>
+                          <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center gap-3 relative">
+                          <span class="text-gray-900 text-sm md:text-[15px]">ما هي البرمجة؟</span>
+                          <i data-lucide="play-circle" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                      <div class="flex h-[60px] items-center justify-between px-4 md:px-6 py-0 relative self-stretch w-full border-b border-gray-200">
+                        <div class="flex items-center gap-2 relative">
+                          <span class="text-gray-500 text-sm">١٨ دقيقة</span>
+                          <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center gap-3 relative">
+                          <span class="text-gray-900 text-sm md:text-[15px]">لغات البرمجة المختلفة</span>
+                          <i data-lucide="play-circle" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                      <div class="flex h-[60px] items-center justify-between px-4 md:px-6 py-0 relative self-stretch w-full border-b border-gray-200">
+                        <div class="flex items-center gap-2 relative">
+                          <span class="text-gray-500 text-sm">١٢ دقيقة</span>
+                          <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center gap-3 relative">
+                          <span class="text-gray-900 text-sm md:text-[15px]">تثبيت بيئة العمل</span>
+                          <i data-lucide="play-circle" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                      <div class="flex h-[60px] items-center justify-between px-4 md:px-6 py-0 relative self-stretch w-full">
+                        <div class="flex items-center gap-2 relative">
+                          <span class="text-gray-500 text-sm">٢٥ دقيقة</span>
+                          <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
+                        </div>
+                        <div class="flex items-center gap-3 relative">
+                          <span class="text-gray-900 text-sm md:text-[15px]">كتابة أول برنامج</span>
+                          <i data-lucide="play-circle" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Module 2 -->
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[105px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <div class="flex h-auto md:h-[52px] items-center justify-end gap-4 relative flex-1">
+                        <div class="flex flex-col   gap-1 relative">
+                          <div class="font-bold text-gray-900 text-base md:text-lg">الوحدة الثانية: التحكم في التدفق</div>
+                          <div class="flex items-center gap-4 text-gray-500 text-sm">
+                            <span>١.٥ ساعة</span>
+                            <span>•</span>
+                            <span>7 دروس</span>
+                          </div>
+                        </div>
+                        <div class="flex w-10 h-10 items-center justify-center bg-blue-50 rounded-lg">
+                          <span class="font-bold text-[#066eb7] text-base">2</span>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+
+                  <!-- Module 3 -->
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[105px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <div class="flex h-auto md:h-[52px] items-center justify-end gap-4 relative flex-1">
+                        <div class="flex flex-col   gap-1 relative">
+                          <div class="font-bold text-gray-900 text-base md:text-lg">الوحدة الثالثة: الدوال والوظائف</div>
+                          <div class="flex items-center gap-4 text-gray-500 text-sm">
+                            <span>١.٥ ساعة</span>
+                            <span>•</span>
+                            <span>6 دروس</span>
+                          </div>
+                        </div>
+                        <div class="flex w-10 h-10 items-center justify-center bg-blue-50 rounded-lg">
+                          <span class="font-bold text-[#066eb7] text-base">3</span>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+
+                  <!-- Module 4 -->
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[105px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <div class="flex h-auto md:h-[52px] items-center justify-end gap-4 relative flex-1">
+                        <div class="flex flex-col   gap-1 relative">
+                          <div class="font-bold text-gray-900 text-base md:text-lg">الوحدة الرابعة: هياكل البيانات</div>
+                          <div class="flex items-center gap-4 text-gray-500 text-sm">
+                            <span>٢ ساعة</span>
+                            <span>•</span>
+                            <span>8 دروس</span>
+                          </div>
+                        </div>
+                        <div class="flex w-10 h-10 items-center justify-center bg-blue-50 rounded-lg">
+                          <span class="font-bold text-[#066eb7] text-base">4</span>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+
+                  <!-- Module 5 -->
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[105px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <div class="flex h-auto md:h-[52px] items-center justify-end gap-4 relative flex-1">
+                        <div class="flex flex-col   gap-1 relative">
+                          <div class="font-bold text-gray-900 text-base md:text-lg">الوحدة الخامسة: المشروع النهائي</div>
+                          <div class="flex items-center gap-4 text-gray-500 text-sm">
+                            <span>٢.٥ ساعة</span>
+                            <span>•</span>
+                            <span>6 دروس</span>
+                          </div>
+                        </div>
+                        <div class="flex w-10 h-10 items-center justify-center bg-blue-50 rounded-lg">
+                          <span class="font-bold text-[#066eb7] text-base">5</span>
+                        </div>
+                      </div>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Instructor Section -->
+            <div class="flex flex-col items-start gap-8 md:gap-10 px-4 md:px-12 py-8 md:py-16 relative self-stretch w-full bg-white">
+              <div class="flex flex-col   gap-6 md:gap-8 relative self-stretch w-full">
+                <div class="flex flex-col   gap-3 relative">
+                  <h2 class="font-bold text-gray-900 text-2xl md:text-[32px] leading-tight md:leading-[48px]">
+                    عن المدرس
+                  </h2>
+                  <div class="w-20 h-1.5 rounded-full gradient-line"></div>
+                </div>
+
+                <div class="flex flex-col items-center p-6 md:p-8 relative self-stretch w-full bg-white rounded-[14px] border border-gray-200 shadow-sm">
+                  <div class="flex flex-col items-center gap-6 relative self-stretch w-full">
+                    <div class="w-32 h-32 rounded-full border-4 border-blue-100 bg-blue-50 flex items-center justify-center">
+                      <i data-lucide="users" class="w-16 h-16 text-[#066eb7]"></i>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 relative self-stretch w-full">
+                      <h3 class="font-bold text-gray-900 text-xl md:text-2xl text-center">
+                        د. أحمد الخطيب
+                      </h3>
+                      <div class="font-semibold text-[#066eb7] text-base text-center">
+                        أستاذ علوم الحاسب والبرمجة
+                      </div>
+                      <p class="text-gray-600 text-sm md:text-[15px] text-center leading-relaxed">
+                        خبير في مجال البرمجة وعلوم الحاسب مع أكثر من ١٥ عاما من الخبرة في التدريس والتطوير. حاصل على دكتوراه في علوم الحاسب من جامعة MIT، وقد ساهم في تدريب آلاف الطلاب على أساسيات ومتقدمات البرمجة.
+                      </p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 relative self-stretch w-full">
+                      <div class="flex items-center gap-2 relative">
+                        <div class="flex flex-col   relative">
+                          <div class="font-bold text-gray-900 text-base md:text-[17px]">١٥ سنة</div>
+                          <div class="font-normal text-gray-500 text-xs md:text-[13px]">خبرة</div>
+                        </div>
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                          <i data-lucide="award" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-2 relative">
+                        <div class="flex flex-col   relative">
+                          <div class="font-bold text-gray-900 text-base md:text-[17px]">٣٥ دورة</div>
+                          <div class="font-normal text-gray-500 text-xs md:text-[13px]">تعليمية</div>
+                        </div>
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                          <i data-lucide="book-open" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-2 relative">
+                        <div class="flex flex-col   relative">
+                          <div class="font-bold text-gray-900 text-base md:text-[17px]">+١٢ ألف</div>
+                          <div class="font-normal text-gray-500 text-xs md:text-[13px]">طالب</div>
+                        </div>
+                        <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                          <i data-lucide="users" class="w-5 h-5 text-[#066eb7]"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="flex h-12 items-center justify-center gap-2.5 p-2.5 relative self-stretch w-full bg-[#066eb7] rounded-lg hover:bg-[#055a94] transition-colors text-white font-semibold text-[15px]">
+                      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                      <span>عرض كل مواد المدرس</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="flex flex-col gap-8 md:gap-10 px-4 md:px-12 py-8 md:py-16 relative self-stretch w-full bg-[#f6f7fa]">
+              <div class="flex flex-col   gap-8 md:gap-10 relative self-stretch w-full">
+                <div class="flex flex-col   gap-3 relative">
+                  <h2 class="font-bold text-gray-900 text-2xl md:text-[32px] leading-tight md:leading-[48px]">
+                    آراء الطلاب
+                  </h2>
+                  <div class="w-20 h-1.5 rounded-full gradient-line"></div>
+                </div>
+
+                <!-- Rating Summary -->
+                <div class="flex flex-col md:flex-row items-center justify-center p-6 md:p-8 relative self-stretch w-full bg-white rounded-[14px] border border-gray-200 shadow-sm gap-6 md:gap-[35px]">
+                  <div class="flex flex-col items-center gap-3 relative">
+                    <div class="font-extrabold text-gray-900 text-5xl md:text-[64px]">٤.٩</div>
+                    <div class="flex items-center gap-1">
+                      <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                      <i data-lucide="star" class="w-5 h-5 fill-amber-400 text-amber-400"></i>
+                    </div>
+                    <div class="text-gray-500 text-[15px]">من ٢٣٥ تقييم</div>
+                  </div>
+                  
+                  <div class="flex flex-col items-start gap-3 relative flex-1 w-full">
+                    <div class="flex items-center gap-3.5 relative self-stretch w-full">
+                      <span class="text-gray-500 text-sm w-8">200</span>
+                      <div class="flex flex-col h-2 items-start relative flex-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-2 bg-amber-400 rounded-full" style="width: 85%"></div>
+                      </div>
+                      <span class="font-semibold text-gray-900 text-sm w-8">5 ★</span>
+                    </div>
+                    <div class="flex items-center gap-3.5 relative self-stretch w-full">
+                      <span class="text-gray-500 text-sm w-8">12</span>
+                      <div class="flex flex-col h-2 items-start relative flex-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-2 bg-amber-400 rounded-full" style="width: 10%"></div>
+                      </div>
+                      <span class="font-semibold text-gray-900 text-sm w-8">4 ★</span>
+                    </div>
+                    <div class="flex items-center gap-3.5 relative self-stretch w-full">
+                      <span class="text-gray-500 text-sm w-8">24</span>
+                      <div class="flex flex-col h-2 items-start relative flex-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-2 bg-amber-400 rounded-full" style="width: 3%"></div>
+                      </div>
+                      <span class="font-semibold text-gray-900 text-sm w-8">3 ★</span>
+                    </div>
+                    <div class="flex items-center gap-3.5 relative self-stretch w-full">
+                      <span class="text-gray-500 text-sm w-8">12</span>
+                      <div class="flex flex-col h-2 items-start relative flex-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-2 bg-amber-400 rounded-full" style="width: 1%"></div>
+                      </div>
+                      <span class="font-semibold text-gray-900 text-sm w-8">2 ★</span>
+                    </div>
+                    <div class="flex items-center gap-3.5 relative self-stretch w-full">
+                      <span class="text-gray-500 text-sm w-8">10</span>
+                      <div class="flex flex-col h-2 items-start relative flex-1 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-2 bg-amber-400 rounded-full" style="width: 1%"></div>
+                      </div>
+                      <span class="font-semibold text-gray-900 text-sm w-8">1 ★</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Individual Reviews -->
+                <div class="flex flex-col items-start gap-6 relative self-stretch w-full">
+                  <div class="flex flex-col items-center justify-center p-6 md:p-8 relative self-stretch w-full bg-white rounded-[14px] border border-gray-200 shadow-sm">
+                    <div class="flex flex-col   gap-6 relative self-stretch w-full">
+                      <div class="flex flex-col   gap-2 relative self-stretch w-full">
+                        <div class="flex items-start justify-between relative self-stretch w-full">
+                          <span class="text-gray-500 text-sm">منذ ٣ أيام</span>
+                          <span class="font-bold text-gray-900 text-[17px]">محمد العتيبي</span>
+                        </div>
+                        <div class="flex items-center gap-1 justify-end w-full">
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                        </div>
+                      </div>
+                      <p class="text-gray-600 text-[15px] leading-relaxed text-right">
+                        دورة رائعة جدا! المحتوى منظم بشكل ممتاز والشرح واضح ومفصل. استفدت كثيرا من الأمثلة العملية والتمارين التطبيقية.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col items-center justify-center p-6 md:p-8 relative self-stretch w-full bg-white rounded-[14px] border border-gray-200 shadow-sm">
+                    <div class="flex flex-col   gap-6 relative self-stretch w-full">
+                      <div class="flex flex-col   gap-2 relative self-stretch w-full">
+                        <div class="flex items-start justify-between relative self-stretch w-full">
+                          <span class="text-gray-500 text-sm">منذ أسبوع</span>
+                          <span class="font-bold text-gray-900 text-[17px]">سارة الأحمد</span>
+                        </div>
+                        <div class="flex items-center gap-1 justify-end w-full">
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                        </div>
+                      </div>
+                      <p class="text-gray-600 text-[15px] leading-relaxed text-right">
+                        أفضل دورة برمجة تعلمتها! الدكتور أحمد يشرح بطريقة سهلة ومبسطة تناسب المبتدئين. المشروع النهائي كان تحدي ممتع.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col items-center justify-center p-6 md:p-8 relative self-stretch w-full bg-white rounded-[14px] border border-gray-200 shadow-sm">
+                    <div class="flex flex-col   gap-6 relative self-stretch w-full">
+                      <div class="flex flex-col   gap-2 relative self-stretch w-full">
+                        <div class="flex items-start justify-between relative self-stretch w-full">
+                          <span class="text-gray-500 text-sm">منذ أسبوعين</span>
+                          <span class="font-bold text-gray-900 text-[17px]">خالد السعيد</span>
+                        </div>
+                        <div class="flex items-center gap-1 justify-end w-full">
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                          <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                        </div>
+                      </div>
+                      <p class="text-gray-600 text-[15px] leading-relaxed text-right">
+                        دورة مفيدة ومناسبة للمبتدئين. المحتوى شامل لكن كنت أتمنى المزيد من التمارين العملية. بشكل عام تجربة جيدة جدا.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="flex flex-col items-start gap-8 md:gap-10 px-4 md:px-12 py-8 md:py-16 relative self-stretch w-full bg-white">
+              <div class="flex flex-col   gap-6 md:gap-8 relative self-stretch w-full">
+                <div class="flex flex-col   gap-3 relative">
+                  <h2 class="font-bold text-gray-900 text-2xl md:text-[32px] leading-tight md:leading-[48px]">
+                    الأسئلة الشائعة
+                  </h2>
+                  <div class="w-20 h-1.5 rounded-full gradient-line"></div>
+                </div>
+
+                <div class="flex flex-col items-start gap-4 relative self-stretch w-full" id="faq-section">
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[75px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="true">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon"></i>
+                      <span class="font-bold text-gray-900 text-base md:text-lg">ما المتطلبات اللازمة للدورة؟</span>
+                    </button>
+                    <div class="accordion-content flex flex-col   pt-4 pb-4 px-4 md:px-6 relative self-stretch w-full bg-gray-50/50 border-t border-gray-200">
+                      <p class="text-gray-600 text-[15px] leading-relaxed text-right">
+                        لا يوجد متطلبات مسبقة للالتحاق بهذه الدورة. الدورة مصممة للمبتدئين تماما ولا تحتاج إلى أي خبرة برمجية سابقة. كل ما تحتاجه هو جهاز كمبيوتر واتصال بالإنترنت والرغبة في التعلم.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[75px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <span class="font-bold text-gray-900 text-base md:text-lg">هل الدورة مسجلة أم مباشرة؟</span>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[75px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <span class="font-bold text-gray-900 text-base md:text-lg">هل يوجد شهادة؟</span>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[75px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <span class="font-bold text-gray-900 text-base md:text-lg">مدة الوصول للمحتوى؟</span>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+
+                  <div class="accordion-item flex flex-col items-start relative self-stretch w-full bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-sm">
+                    <button class="accordion-trigger flex h-auto md:h-[75px] items-center justify-between px-4 md:px-6 py-4 relative self-stretch w-full" data-expanded="false">
+                      <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-200 accordion-icon -rotate-90"></i>
+                      <span class="font-bold text-gray-900 text-base md:text-lg">هل يوجد دعم فني أثناء الدورة؟</span>
+                    </button>
+                    <div class="accordion-content hidden"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Course Card -->
+          <div class="flex flex-col w-full lg:w-[405px] items-center gap-0 lg:sticky lg:top-24 bg-white rounded-[14px] overflow-hidden border border-gray-200 shadow-lg">
+            <div class="relative self-stretch w-full h-[195px] course-card-gradient flex items-center justify-center">
+              <i data-lucide="play-circle" class="w-16 h-16 text-[#066eb7] opacity-50"></i>
+            </div>
+
+            <div class="flex flex-col   justify-between p-6 relative self-stretch w-full">
+              <div class="flex flex-col   gap-4 relative mb-6 w-full">
+                <h3 class="font-bold text-gray-900 text-xl">مقدمة في علوم الحاسب</h3>
+                <div class="text-gray-600 text-[15px]">تعلم أساسيات البرمجة وعلوم الحاسب من الصفر</div>
+                <div class="flex items-center justify-end gap-3 relative">
+                  <span class="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 rounded-lg border border-gray-200 text-gray-900 text-[13px] font-medium">
+                    ١٢ ساعة
+                    <i data-lucide="clock" class="w-4 h-4 text-gray-500"></i>
+                  </span>
+                  <span class="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 rounded-lg border border-gray-200 text-gray-900 text-[13px] font-medium">
+                    مبتدئ
+                    <i data-lucide="bar-chart" class="w-4 h-4 text-gray-500"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex h-[58px] items-center justify-between relative self-stretch w-full border-t border-gray-200 pt-4">
+                <button class="flex h-[41px] items-center justify-center gap-2 px-5 py-0 relative rounded-lg subscribe-btn text-white font-semibold text-sm hover:opacity-90 transition-opacity">
+                  <span>أضف للسلة</span>
+                  <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                </button>
+
+                <div class="flex items-center gap-2 relative">
+                  <span class="text-gray-500 text-sm">ريال</span>
+                  <span class="font-extrabold text-[#0fba1e] text-[28px]">٢٩٩</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="flex w-full items-center justify-center gap-2.5 px-4 md:px-20 py-12 md:py-[78px] relative bg-[#f6f7fa]">
+        <div class="flex flex-col w-full max-w-[644px] items-center gap-8 md:gap-12 relative z-10">
+          <div class="flex flex-col items-center gap-4 md:gap-[21px] relative self-stretch w-full">
+            <h2 class="font-bold text-gray-900 text-2xl md:text-[42px] text-center leading-tight md:leading-[52.5px]">
+              جاهز تبدأ رحلتك التعليمية؟
+            </h2>
+
+            <p class="text-gray-600 text-base md:text-lg text-center leading-relaxed">
+              انضم الآن لآلاف الطلاب وابدأ التعلم اليوم. احصل على وصول فوري لجميع محتويات الدورة.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 relative">
+            <button class="flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-white rounded-[14px] border-2 border-[#066eb7] shadow-lg font-bold text-[#066eb7] text-base md:text-[17px] hover:bg-blue-50 transition-colors">
+              <span>تواصل معنا لمعرفة التفاصيل</span>
+              <i data-lucide="message-circle" class="w-5 h-5 text-[#066eb7]"></i>
+            </button>
+
+            <button class="flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 rounded-[14px] shadow-lg subscribe-btn font-bold text-white text-base md:text-[17px] hover:opacity-90 transition-opacity">
+              <i data-lucide="rocket" class="w-5 h-5"></i>
+              <span>اشترك الآن</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="absolute top-0 right-0 w-[200px] md:w-[257px] h-[200px] md:h-[257px] bg-[#066eb70d] rounded-full blur-3xl"></div>
+        <div class="absolute left-0 bottom-0 w-[200px] md:w-[275px] h-[200px] md:h-[275px] bg-[#0fba1e0d] rounded-full blur-3xl"></div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="flex w-full items-center justify-center pt-16 md:pt-[100px] pb-8 md:pb-12 px-4 relative overflow-hidden footer-gradient">
+        <div class="flex flex-col w-full max-w-[1280px] items-start gap-12 md:gap-16 relative">
+          <div class="flex flex-wrap items-start justify-between relative self-stretch w-full gap-8">
+            <div class="flex flex-col   gap-6 relative">
+              <h3 class="font-bold text-white text-lg md:text-xl">اتصل بنا</h3>
+
+              <div class="flex flex-col   gap-4 relative">
+                <div class="flex items-center justify-end gap-4 relative">
+                  <span class="text-white/70 text-sm">+966 12 345 6789</span>
+                  <div class="w-10 h-10 flex items-center justify-center">
+                    <i data-lucide="phone" class="w-5 h-5 text-white"></i>
+                  </div>
+                </div>
+                <div class="flex items-center justify-end gap-4 relative">
+                  <span class="text-white/70 text-sm">info@edulink.sa</span>
+                  <div class="w-10 h-10 flex items-center justify-center">
+                    <i data-lucide="mail" class="w-5 h-5 text-white"></i>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-4 relative">
+                  <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                  </a>
+                  <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                    <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col   gap-6 relative">
+              <h3 class="font-bold text-white text-lg md:text-xl">الدعم الفني</h3>
+              <nav class="flex flex-col   gap-4 relative">
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">مركز المساعدة</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">الأسئلة الشائعة</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">الإبلاغ عن مشكلة</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">تواصل معنا</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+              </nav>
+            </div>
+
+            <div class="flex flex-col   gap-6 relative">
+              <h3 class="font-bold text-white text-lg md:text-xl">السياسات</h3>
+              <nav class="flex flex-col   gap-4 relative">
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">سياسة الخصوصية</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">شروط الاستخدام</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">سياسة الاسترجاع</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+                <a href="#" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                  <span class="text-white/70 text-sm">الأحكام والشروط</span>
+                  <div class="w-1.5 h-1.5 bg-[#0fba1e] rounded-full"></div>
+                </a>
+              </nav>
+            </div>
+
+            <div class="flex flex-col w-full md:w-[184px]   gap-3 relative">
+              <div class="flex items-center justify-end gap-2">
+                <span class="font-bold text-white text-xl">إديولينك</span>
+                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+              </div>
+              <p class="text-white/80 text-sm leading-relaxed text-right">
+                إديولينك منصة تعليمية متكاملة توفر دعما شاملا للطلاب من خلال معلمين متميزين ومحتوى تعليمي عالي الجودة.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-start pt-8 pb-0 px-0 relative self-stretch w-full border-t border-white/10">
+            <div class="flex flex-wrap items-center justify-between relative self-stretch w-full gap-4">
+              <div class="flex flex-wrap items-center gap-4 md:gap-6 relative">
+                <nav class="flex items-center gap-4 md:gap-6 relative">
+                  <a href="#" class="text-white/60 text-sm hover:text-white transition-colors">سياسة الخصوصية</a>
+                  <a href="#" class="text-white/60 text-sm hover:text-white transition-colors">الشروط والأحكام</a>
+                </nav>
+              </div>
+
+              <p class="text-white/60 text-sm">
+                © 2024 إديولينك. جميع الحقوق محفوظة.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute left-0 bottom-0 w-72 md:w-96 h-72 md:h-96 bg-[#0fba1e1a] rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/single-course.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
