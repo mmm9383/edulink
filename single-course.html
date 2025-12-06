@@ -83,41 +83,39 @@
   transform: rotate(-90deg);
 }
 
-.input[type="text"]:focus {
+input[type="text"]:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(6, 110, 183, 0.1);
 }
 
-.button {
+button {
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.a {
+a {
   text-decoration: none;
 }
-
-.span.inline-flex.px-4.py-2.bg-white\/60.rounded-lg.border.border-gray-200.text-\[\#066eb7\].font-semibold.text-sm {
+span.inline-flex.px-4.py-2.bg-white\/60.rounded-lg.border.border-gray-200.text-\[\#066eb7\].font-semibold.text-sm {
     width: max-content;
 }
-
-.flex.flex-col.gap-2.relative.self-stretch.w-full {
+.flex.flex-col.gap-2.relative.self-stretch.w-full
+Specificity: (0,6,0)
+ {
     direction: ltr;
 }
-
 .accordion-item.flex.flex-col.items-start.relative.self-stretch.w-full.bg-white.rounded-\[14px\].overflow-hidden.border.border-gray-200.shadow-sm {
     direction: ltr;
 }
-
 @media (max-width: 1024px) {
-  .lg\:skyrise-course-sticky {
+  .lg\:sticky {
     position: relative !important;
     top: auto !important;
   }
 }
 
 @media (max-width: 768px) {
-  .header {
+  header {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -128,28 +126,28 @@
   }
 }
 
-.html {
+html {
   scroll-behavior: smooth;
 }
 
-.::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
 }
 
-.::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-.::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #066eb7;
   border-radius: 4px;
 }
 
-.::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #055a94;
 }
 
-.::selection {
+::selection {
   background: rgba(6, 110, 183, 0.2);
 }
 
