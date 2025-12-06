@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - إديولينك</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .skyrise-contact-header {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 254, 254, 0.2);
+            padding: 16px 80px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skyrise-contact-header-container {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .skyrise-contact-logo {
+            width: 184px;
+            height: 58px;
+            object-fit: cover;
+        }
+
+        .skyrise-contact-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .skyrise-contact-nav-link {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1d1a16;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .skyrise-contact-dropdown-icon {
+            width: 24px;
+            height: 24px;
+            transform: rotate(180deg);
+        }
+
+        .skyrise-contact-search-box {
+            width: 228px;
+            height: 46px;
+            background-color: rgba(246, 247, 250, 0.8);
+            border: 0.8px solid rgba(227, 229, 232, 0.5);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16.8px;
+        }
+
+        .skyrise-contact-search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            color: #777;
+            width: 100%;
+            text-align: right;
+        }
+
+        .skyrise-contact-search-box input::placeholder {
+            color: #777;
+        }
+
+        .skyrise-contact-search-icon {
+            width: 17px;
+            height: 17px;
+            color: #777;
+            flex-shrink: 0;
+        }
+
+        .skyrise-contact-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skyrise-contact-btn-lang {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 10px;
+        }
+
+        .skyrise-contact-btn-lang svg {
+            width: 20px;
+            height: 20px;
+            color: #4a4a4a;
+        }
+
+        .skyrise-contact-btn-lang span {
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            color: #4a4a4a;
+        }
+
+        .skyrise-contact-btn-bell {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skyrise-contact-btn-bell svg {
+            width: 20px;
+            height: 20px;
+            color: #4a4a4a;
+        }
+
+        .skyrise-contact-btn-login {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #066eb7 0%, #055c98 100%);
+            border: none;
+            border-radius: 14px;
+            padding: 10px 20px;
+            height: 46px;
+            cursor: pointer;
+        }
+
+        .skyrise-contact-btn-login svg {
+            width: 17.5px;
+            height: 17.5px;
+            color: white;
+        }
+
+        .skyrise-contact-btn-login span {
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            color: white;
+        }
+
+        /* Hero Section */
+        .skyrise-contact-hero {
+            position: relative;
+            width: 100%;
+            height: 421px;
+            overflow: hidden;
+        }
+
+        .skyrise-contact-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .skyrise-contact-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .skyrise-contact-hero-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 80px;
+            gap: 28px;
+        }
+
+        .skyrise-contact-hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 60px;
+        }
+
+        .skyrise-contact-hero-content p {
+            font-size: 20px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 35px;
+            max-width: 733px;
+        }
+
+        /* Main Content */
+        .skyrise-contact-main-content {
+            background-color: white;
+            padding: 78px 80px;
+            width: 100%;
+        }
+
+        .skyrise-contact-content-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            gap: 48px;
+        }
+
+        .skyrise-contact-left-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .skyrise-contact-right-side {
+            flex: 1;
+        }
+
+        .skyrise-contact-card {
+            background-color: white;
+            border: 0.8px solid #e3e5e8;
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        /* Contact Info Card */
+        .skyrise-contact-info h2,
+        .skyrise-contact-form h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 42px;
+            text-align: right;
+            margin-bottom: 24px;
+        }
+
+        .skyrise-contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .skyrise-contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .skyrise-contact-info-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .skyrise-contact-info-icon.blue {
+            background-color: rgba(6, 110, 183, 0.08);
+        }
+
+        .skyrise-contact-info-icon.blue svg {
+            width: 24px;
+            height: 24px;
+            color: #066eb7;
+        }
+
+        .skyrise-contact-info-icon.green {
+            background-color: rgba(15, 186, 30, 0.08);
+        }
+
+        .skyrise-contact-info-icon.green svg {
+            width: 24px;
+            height: 24px;
+            color: #0fba1e;
+        }
+
+        .skyrise-contact-info-text {
+            text-align: right;
+        }
+
+        .skyrise-contact-info-text strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 24px;
+            margin-bottom: 8px;
+        }
+
+        .skyrise-contact-info-text span {
+            font-size: 15px;
+            font-weight: 400;
+            color: #4a4a4a;
+            line-height: 24px;
+        }
+
+        /* Social Media Card */
+        .skyrise-contact-social-media h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 30px;
+            text-align: right;
+            margin-bottom: 24px;
+        }
+
+        .skyrise-contact-social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .skyrise-contact-social-icon {
+            width: 48px;
+            height: 48px;
+            border: 1.6px solid #066eb7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #066eb7;
+            transition: all 0.3s ease;
+        }
+
+        .skyrise-contact-social-icon:hover {
+            background-color: #066eb7;
+            color: white;
+        }
+
+        .skyrise-contact-social-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Map Location Card */
+        .skyrise-contact-map-location {
+            background-color: #f6f7fa;
+            height: 256px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+        }
+
+        .skyrise-contact-map-icon {
+            width: 64px;
+            height: 64px;
+            background-color: white;
+            border: 1.6px solid #066eb7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skyrise-contact-map-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #066eb7;
+        }
+
+        .skyrise-contact-map-location p {
+            font-size: 15px;
+            font-weight: 600;
+            color: #4a4a4a;
+            line-height: 22.5px;
+            text-align: center;
+        }
+
+        /* Contact Form */
+        .skyrise-contact-form {
+            padding: 32px;
+        }
+
+        .skyrise-contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .skyrise-contact-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skyrise-contact-form-group label {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 22.5px;
+        }
+
+        .skyrise-contact-form-group label .skyrise-contact-optional {
+            color: #777;
+        }
+
+        .skyrise-contact-form-group input,
+        .skyrise-contact-form-group textarea {
+            width: 100%;
+            background-color: #f6f7fa;
+            border: 0.8px solid #e3e5e8;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            color: #1a1a1a;
+            text-align: right;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .skyrise-contact-form-group input {
+            height: 48px;
+        }
+
+        .skyrise-contact-form-group textarea {
+            height: 170px;
+            resize: none;
+        }
+
+        .skyrise-contact-form-group input::placeholder,
+        .skyrise-contact-form-group textarea::placeholder {
+            color: #777;
+        }
+
+        .skyrise-contact-form-group input:focus,
+        .skyrise-contact-form-group textarea:focus {
+            border-color: #066eb7;
+        }
+
+        .skyrise-contact-btn-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #066eb7 0%, #055c98 100%);
+            border: none;
+            border-radius: 12px;
+            height: 58px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .skyrise-contact-btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        .skyrise-contact-btn-submit svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .skyrise-contact-btn-submit span {
+            font-family: 'Cairo', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            line-height: 25.5px;
+        }
+
+        /* FAQ Section */
+        .skyrise-contact-faq-section {
+            background-color: #f6f7fa;
+            padding: 64px 48px;
+            width: 100%;
+        }
+
+        .skyrise-contact-faq-container {
+            max-width: 1344px;
+            margin: 0 auto;
+        }
+
+        .skyrise-contact-section-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 64px;
+        }
+
+        .skyrise-contact-section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 54px;
+            text-align: center;
+        }
+
+        .skyrise-contact-header-line {
+            width: 80px;
+            height: 6px;
+            background: linear-gradient(to right, #066eb7, #0fba1e);
+            border-radius: 999px;
+        }
+
+        .skyrise-contact-faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .skyrise-contact-faq-item {
+            background-color: white;
+            border: 0.8px solid #e3e5e8;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .skyrise-contact-faq-question {
+            width: 100%;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .skyrise-contact-faq-question span {
+            font-family: 'Cairo', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 27px;
+            text-align: right;
+        }
+
+        .skyrise-contact-faq-icon {
+            width: 20px;
+            height: 20px;
+            color: #1a1a1a;
+            transition: transform 0.3s ease;
+        }
+
+        .skyrise-contact-faq-item.active .skyrise-contact-faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .skyrise-contact-faq-answer {
+            background-color: rgba(246, 247, 250, 0.5);
+            border-top: 0.8px solid #e3e5e8;
+            padding: 16px 24px 0;
+            display: none;
+        }
+
+        .skyrise-contact-faq-item.active .skyrise-contact-faq-answer {
+            display: block;
+        }
+
+        .skyrise-contact-faq-answer p {
+            font-size: 15px;
+            font-weight: 400;
+            color: #4a4a4a;
+            line-height: 25.5px;
+            text-align: right;
+        }
+
+        /* CTA Section */
+        .skyrise-contact-cta-section {
+            background-color: #f6f7fa;
+            height: 369px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skyrise-contact-cta-blur-1 {
+            position: absolute;
+            top: 0;
+            left: 776px;
+            width: 384px;
+            height: 384px;
+            background-color: rgba(6, 110, 183, 0.05);
+            border-radius: 50%;
+            filter: blur(64px);
+        }
+
+        .skyrise-contact-cta-blur-2 {
+            position: absolute;
+            top: -15.4px;
+            left: 0;
+            width: 384px;
+            height: 384px;
+            background-color: rgba(15, 186, 30, 0.05);
+            border-radius: 50%;
+            filter: blur(64px);
+        }
+
+        .skyrise-contact-cta-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .skyrise-contact-cta-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 52.5px;
+        }
+
+        .skyrise-contact-cta-content p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #4a4a4a;
+            line-height: 30.6px;
+        }
+
+        .skyrise-contact-btn-cta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #066eb7;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .skyrise-contact-btn-cta:hover {
+            background-color: #055c98;
+        }
+
+        .skyrise-contact-btn-cta svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .skyrise-contact-btn-cta span {
+            font-family: 'Cairo', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            line-height: 25.5px;
+        }
+
+        /* Footer */
+        .skyrise-contact-footer {
+            background: linear-gradient(to bottom, #055c98, #044a7a);
+            padding: 100px 0 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skyrise-contact-footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: rotate(180deg);
+            color: #f6f7fa;
+        }
+
+        .skyrise-contact-footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 80px;
+        }
+
+        .skyrise-contact-footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 64px;
+            margin-bottom: 64px;
+        }
+
+        .skyrise-contact-footer-brand {
+            max-width: 193px;
+        }
+
+        .skyrise-contact-footer-logo {
+            width: 184px;
+            height: 58px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        .skyrise-contact-footer-brand p {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 25.2px;
+            text-align: right;
+        }
+
+        .skyrise-contact-footer-links h4,
+        .skyrise-contact-footer-contact h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            line-height: 30px;
+            margin-bottom: 24px;
+        }
+
+        .skyrise-contact-footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .skyrise-contact-footer-links li {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .skyrise-contact-footer-links li::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: #0fba1e;
+            border-radius: 50%;
+        }
+
+        .skyrise-contact-footer-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            line-height: 21px;
+            transition: color 0.3s ease;
+        }
+
+        .skyrise-contact-footer-links a:hover {
+            color: white;
+        }
+
+        .skyrise-contact-footer-contact .skyrise-contact-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .skyrise-contact-footer-contact .skyrise-contact-contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skyrise-contact-footer-contact .skyrise-contact-contact-icon svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .skyrise-contact-footer-contact .skyrise-contact-contact-item span {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 21px;
+            text-align: right;
+        }
+
+        .skyrise-contact-footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .skyrise-contact-footer-social-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .skyrise-contact-footer-social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .skyrise-contact-footer-social-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .skyrise-contact-footer-bottom {
+            border-top: 0.8px solid rgba(255, 255, 255, 0.1);
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skyrise-contact-footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .skyrise-contact-footer-bottom-links a {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            line-height: 21px;
+            transition: color 0.3s ease;
+        }
+
+        .skyrise-contact-footer-bottom-links a:hover {
+            color: white;
+        }
+
+        .skyrise-contact-footer-bottom p {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 21px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1280px) {
+            .skyrise-contact-header {
+                padding: 16px 40px;
+            }
+
+            .skyrise-contact-main-content {
+                padding: 40px;
+            }
+
+            .skyrise-contact-content-container {
+                flex-direction: column;
+            }
+
+            .skyrise-contact-footer-content {
+                flex-wrap: wrap;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .skyrise-contact-header {
+                padding: 16px 20px;
+            }
+
+            .skyrise-contact-nav {
+                display: none;
+            }
+
+            .skyrise-contact-hero-content h1 {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .skyrise-contact-hero-content p {
+                font-size: 16px;
+                line-height: 28px;
+            }
+
+            .skyrise-contact-main-content {
+                padding: 20px;
+            }
+
+            .skyrise-contact-faq-section {
+                padding: 40px 20px;
+            }
+
+            .skyrise-contact-section-header h2 {
+                font-size: 28px;
+                line-height: 42px;
+            }
+
+            .skyrise-contact-cta-content h2 {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .skyrise-contact-footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .skyrise-contact-footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="skyrise-contact-header">
+        <div class="skyrise-contact-header-container">
+            <img src="https://www.figma.com/api/mcp/asset/79cf6f36-c8ea-4950-bfd5-78fae0141652" alt="Logo" class="skyrise-contact-logo">
+
+            <nav class="skyrise-contact-nav">
+                <a href="#" class="skyrise-contact-nav-link">الرئيسية</a>
+                <div class="skyrise-contact-nav-link skyrise-contact-dropdown">
+                    <span>من نحن</span>
+                    <svg class="skyrise-contact-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+                <div class="skyrise-contact-nav-link skyrise-contact-dropdown">
+                    <span>البرامج التعليمية</span>
+                    <svg class="skyrise-contact-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+                <div class="skyrise-contact-nav-link skyrise-contact-dropdown">
+                    <span>الدعم</span>
+                    <svg class="skyrise-contact-dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
+
+                <div class="skyrise-contact-search-box">
+                    <input type="text" placeholder="ابحث عن دورة أو معلم...">
+                    <svg class="skyrise-contact-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                    </svg>
+                </div>
+
+                <div class="skyrise-contact-header-actions">
+                    <button class="skyrise-contact-btn-lang">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path
+                                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                        <span>EN</span>
+                    </button>
+                    <button class="skyrise-contact-btn-bell">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                    </button>
+                    <button class="skyrise-contact-btn-login">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <span>تسجيل الدخول</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="skyrise-contact-hero">
+        <img src="https://www.figma.com/api/mcp/asset/5aaf03a2-c0d5-4771-8562-7cae9400159e" alt="Hero Background"
+            class="skyrise-contact-hero-bg">
+        <div class="skyrise-contact-hero-overlay"></div>
+        <div class="skyrise-contact-hero-content">
+            <h1>تواصل معنا</h1>
+            <p>نسعد بالإجابة على أسئلتك واستفساراتك. تواصل معنا عبر النموذج أو عبر بيانات الاتصال التالية.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="skyrise-contact-main-content">
+        <div class="skyrise-contact-content-container">
+            <!-- Right Side - Contact Form -->
+            <div class="skyrise-contact-right-side">
+                <div class="skyrise-contact-card skyrise-contact-form">
+                    <h2>أرسل لنا رسالة</h2>
+                    <form id="skyrise-contactForm">
+                        <div class="skyrise-contact-form-group">
+                            <label>الاسم الكامل</label>
+                            <input type="text" placeholder="أدخل اسمك الكامل" required>
+                        </div>
+                        <div class="skyrise-contact-form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" placeholder="example@email.com" required>
+                        </div>
+                        <div class="skyrise-contact-form-group">
+                            <label>رقم الجوال <span class="skyrise-contact-optional">(اختياري)</span></label>
+                            <input type="tel" placeholder="+966 5XX XXX XXX">
+                        </div>
+                        <div class="skyrise-contact-form-group">
+                            <label>موضوع الرسالة</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="skyrise-contact-form-group">
+                            <label>نص الرسالة</label>
+                            <textarea placeholder="اكتب رسالتك هنا..." required></textarea>
+                        </div>
+                        <button type="submit" class="skyrise-contact-btn-submit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                            <span>إرسال الرسالة</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Left Side - Contact Info -->
+            <div class="skyrise-contact-left-side">
+                <!-- Contact Information -->
+                <div class="skyrise-contact-card skyrise-contact-info">
+                    <h2>معلومات التواصل</h2>
+                    <div class="skyrise-contact-info-list">
+                        <div class="skyrise-contact-info-item">
+                            <div class="skyrise-contact-info-icon blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="skyrise-contact-info-text">
+                                <strong>العنوان</strong>
+                                <span>المملكة العربية السعودية – الرياض</span>
+                            </div>
+                        </div>
+                        <div class="skyrise-contact-info-item">
+                            <div class="skyrise-contact-info-icon green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div class="skyrise-contact-info-text">
+                                <strong>الهاتف</strong>
+                                <span>+966 555 555 555</span>
+                            </div>
+                        </div>
+                        <div class="skyrise-contact-info-item">
+                            <div class="skyrise-contact-info-icon blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <div class="skyrise-contact-info-text">
+                                <strong>البريد الإلكتروني</strong>
+                                <span>support@edulink.com</span>
+                            </div>
+                        </div>
+                        <div class="skyrise-contact-info-item">
+                            <div class="skyrise-contact-info-icon green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div class="skyrise-contact-info-text">
+                                <strong>ساعات العمل</strong>
+                                <span>9:00 صباحاً – 6:00 مساءً (الأحد – الخميس)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="skyrise-contact-card skyrise-contact-social-media">
+                    <h3>تابعنا على</h3>
+                    <div class="skyrise-contact-social-icons">
+                        <a href="#" class="skyrise-contact-social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="skyrise-contact-social-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="skyrise-contact-social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="#" class="skyrise-contact-social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Location -->
+                <div class="skyrise-contact-card skyrise-contact-map-location">
+                    <div class="skyrise-contact-map-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <p>الرياض، المملكة العربية السعودية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="skyrise-contact-faq-section">
+        <div class="skyrise-contact-faq-container">
+            <div class="skyrise-contact-section-header">
+                <h2>الأسئلة الشائعة</h2>
+                <div class="skyrise-contact-header-line"></div>
+            </div>
+
+            <div class="skyrise-contact-faq-list">
+                <div class="skyrise-contact-faq-item active">
+                    <button class="skyrise-contact-faq-question">
+                        <span>كيف يمكنني التواصل مع فريق الدعم؟</span>
+                        <svg class="skyrise-contact-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="skyrise-contact-faq-answer">
+                        <p>يمكنك التواصل معنا عبر عدة طرق: ملء نموذج التواصل في هذه الصفحة، أو إرسال بريد إلكتروني إلى
+                            support@edulink.com، أو الاتصال على رقم الهاتف +966 555 555 555. نحن متواجدون لخدمتك من
+                            الأحد إلى الخميس من الساعة 9 صباحاً حتى 6 مساءً.</p>
+                    </div>
+                </div>
+                <div class="skyrise-contact-faq-item">
+                    <button class="skyrise-contact-faq-question">
+                        <span>ما هي مواعيد الرد على الرسائل؟</span>
+                        <svg class="skyrise-contact-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="skyrise-contact-faq-answer">
+                        <p>نسعى للرد على جميع الرسائل خلال 24 ساعة عمل. في أوقات الذروة قد يستغرق الأمر وقتاً أطول
+                            قليلاً.</p>
+                    </div>
+                </div>
+                <div class="skyrise-contact-faq-item">
+                    <button class="skyrise-contact-faq-question">
+                        <span>هل يمكن التواصل عبر الواتساب؟</span>
+                        <svg class="skyrise-contact-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="skyrise-contact-faq-answer">
+                        <p>نعم، يمكنك التواصل معنا عبر الواتساب على نفس رقم الهاتف المذكور أعلاه.</p>
+                    </div>
+                </div>
+                <div class="skyrise-contact-faq-item">
+                    <button class="skyrise-contact-faq-question">
+                        <span>كم يستغرق الرد على البريد الإلكتروني؟</span>
+                        <svg class="skyrise-contact-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="skyrise-contact-faq-answer">
+                        <p>عادة ما نرد على رسائل البريد الإلكتروني خلال 24-48 ساعة عمل.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="skyrise-contact-cta-section">
+        <div class="skyrise-contact-cta-blur-1"></div>
+        <div class="skyrise-contact-cta-blur-2"></div>
+        <div class="skyrise-contact-cta-content">
+            <h2>هل تحتاج مساعدة إضافية؟</h2>
+            <p>فريقنا جاهز لمساعدتك في أي وقت. تواصل معنا الآن للحصول على الدعم الفوري.</p>
+            <button class="skyrise-contact-btn-cta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>تحدث معنا الآن</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="skyrise-contact-footer">
+        <div class="skyrise-contact-footer-wave">
+            <svg viewBox="0 0 1440 64" fill="none">
+                <path d="M0 64V32C240 0 480 0 720 32C960 64 1200 64 1440 32V64H0Z" fill="currentColor" />
+            </svg>
+        </div>
+        <div class="skyrise-contact-footer-container">
+            <div class="skyrise-contact-footer-content">
+                <!-- Logo & Description -->
+                <div class="skyrise-contact-footer-brand">
+                    <img src="https://www.figma.com/api/mcp/asset/79cf6f36-c8ea-4950-bfd5-78fae0141652" alt="Logo"
+                        class="skyrise-contact-footer-logo">
+                    <p>إديولينك منصة تعليمية متكاملة توفر دعماً شاملاً للطلاب من خلال معلمين متميزين ومحتوى تعليمي عالي
+                        الجودة.</p>
+                </div>
+
+                <!-- Policies -->
+                <div class="skyrise-contact-footer-links">
+                    <h4>السياسات</h4>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">الأحكام والشروط</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="skyrise-contact-footer-links">
+                    <h4>الدعم الفني</h4>
+                    <ul>
+                        <li><a href="#">مركز المساعدة</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">الإبلاغ عن مشكلة</a></li>
+                        <li><a href="#">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="skyrise-contact-footer-contact">
+                    <h4>اتصل بنا</h4>
+                    <div class="skyrise-contact-contact-item">
+                        <div class="skyrise-contact-contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <span>+966 12 345 6789</span>
+                    </div>
+                    <div class="skyrise-contact-contact-item">
+                        <div class="skyrise-contact-contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <span>info@edulink.sa</span>
+                    </div>
+                    <div class="skyrise-contact-footer-socials">
+                        <a href="#" class="skyrise-contact-footer-social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="skyrise-contact-footer-social-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="skyrise-contact-footer-social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="#" class="skyrise-contact-footer-social-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skyrise-contact-footer-bottom">
+                <div class="skyrise-contact-footer-bottom-links">
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">الشروط والأحكام</a>
+                </div>
+                <p>© 2024 إديولينك. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.skyrise-contact-faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.skyrise-contact-faq-question');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all FAQ items
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                    });
+
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Contact Form Submission
+            const contactForm = document.getElementById('skyrise-contactForm');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const data = {};
+
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+
+                    // Show success message
+                    alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.');
+
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const target = document.querySelector(this.getAttribute('href'));
+
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('.skyrise-contact-header');
+
+            window.addEventListener('scroll', function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > 100) {
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Form validation
+            const inputs = document.querySelectorAll('.skyrise-contact-form-group input, .skyrise-contact-form-group textarea');
+
+            inputs.forEach(input => {
+                input.addEventListener('blur', function () {
+                    if (this.hasAttribute('required') && !this.value.trim()) {
+                        this.style.borderColor = '#e74c3c';
+                    } else {
+                        this.style.borderColor = '#e3e5e8';
+                    }
+                });
+
+                input.addEventListener('focus', function () {
+                    this.style.borderColor = '#066eb7';
+                });
+            });
+
+            // Email validation
+            const emailInput = document.querySelector('input[type="email"]');
+
+            if (emailInput) {
+                emailInput.addEventListener('blur', function () {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                    if (this.value && !emailPattern.test(this.value)) {
+                        this.style.borderColor = '#e74c3c';
+                    }
+                });
+            }
+
+            // Social icons hover effect
+            const socialIcons = document.querySelectorAll('.skyrise-contact-social-icon');
+
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.1)';
+                });
+
+                icon.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Button click effects
+            const buttons = document.querySelectorAll('.skyrise-contact-btn-submit, .skyrise-contact-btn-cta, .skyrise-contact-btn-login');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        left: ${x}px;
+                        top: ${y}px;
+                        pointer-events: none;
+                    `;
+
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add ripple animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.skyrise-contact-card, .skyrise-contact-faq-item, .skyrise-contact-section-header').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+
+        // Add animate-in styles
+        const animateStyle = document.createElement('style');
+        animateStyle.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `;
+        document.head.appendChild(animateStyle);
+    </script>
+</body>
+</html>
