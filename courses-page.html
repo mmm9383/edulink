@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إديولينك - منصة تعليمية متكاملة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', Helvetica, sans-serif;
+  background: #ffffff;
+  direction: rtl;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 80px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 254, 254, 0.2);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 144px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #066eb7 0%, #055c98 100%);
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background: #f6f7fa;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 37px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.lang-btn:hover {
+  background: #f6f7fa;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 228px;
+  height: 46px;
+  padding: 0 16px;
+  background: rgba(246, 247, 250, 0.8);
+  border-radius: 14px;
+  border: 0.8px solid rgba(227, 229, 232, 0.5);
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  font-family: 'Cairo', Helvetica;
+  font-size: 14px;
+  color: #777777;
+  width: 100%;
+  direction: rtl;
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1d1a16;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-item.has-dropdown {
+  flex-direction: row-reverse;
+}
+
+.logo {
+  width: 184px;
+  height: 58px;
+  object-fit: cover;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 80px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f6f7fa 0%, #ffffff 100%);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1280px;
+  gap: 64px;
+      direction: ltr;
+}
+
+.hero-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image-wrapper img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+  
+}
+
+.hero-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+.hero-blur-circle {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 128px;
+  height: 128px;
+  background: rgba(6, 110, 183, 0.1);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 24px;
+  
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: 48px;
+  text-align: right;
+  line-height: 72px;
+}
+
+.text-blue {
+  color: #066eb7;
+}
+
+.text-green {
+  color: #0fba1e;
+}
+
+.hero-description {
+  font-weight: 400;
+  font-size: 18px;
+  color: #4a4a4a;
+  text-align: right;
+  line-height: 32px;
+  max-width: 450px;
+}
+
+.hero-bg-blur {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: rgba(6, 110, 183, 0.04);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 48px 80px;
+  background: white;
+}
+
+.filter-card {
+  width: 100%;
+  background: white;
+  border-radius: 14px;
+  border: 0.8px solid #e3e5e8;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 58px 48px;
+}
+
+.filter-content > * {
+  width: 100%;
+}
+
+.filter-search {
+  position: relative;
+  width: 100%;
+  height: 46px;
+  background: rgba(246, 247, 250, 0.8);
+  border-radius: 14px;
+  border: 0.8px solid rgba(227, 229, 232, 0.5);
+  margin-bottom: 24px;
+}
+
+.filter-search input {
+  width: 100%;
+  height: 100%;
+  padding: 0 48px 0 16px;
+  border: none;
+  background: transparent;
+  font-family: 'Cairo', Helvetica;
+  font-size: 14px;
+  color: #777777;
+  direction: rtl;
+  text-align: right;
+}
+
+.filter-search input:focus {
+  outline: none;
+}
+
+.filter-search svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filter-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.reset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 165px;
+  height: 48px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #e3e5e8;
+  background: white;
+  cursor: pointer;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 600;
+  font-size: 15px;
+  color: #4a4a4a;
+}
+
+.reset-btn:hover {
+  background: #f9fafb;
+}
+
+.apply-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 165px;
+  height: 48px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #066eb7;
+  border: none;
+  color: white;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  background: #055a96;
+}
+
+.filter-dropdowns {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex: 1;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+}
+
+.filter-group label {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1a1a1a;
+  align-self: stretch;
+  text-align: right;
+}
+
+.filter-group select {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  background: #f6f7fa;
+  border-radius: 10px;
+  border: 0.8px solid #e3e5e8;
+  font-family: 'Cairo', Helvetica;
+  font-size: 15px;
+  color: #777777;
+  direction: rtl;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23777777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 16px center;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #066eb7;
+}
+
+/* Courses Section */
+.courses-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 78px 80px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f6f7fa 0%, #ffffff 100%);
+  width: 100%;
+}
+
+.courses-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  align-items: center;
+  gap: 64px;
+  position: relative;
+  z-index: 10;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 16px;
+  width: 100%;
+}
+
+.section-header h2 {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 700;
+  font-size: 36px;
+  color: #1a1a1a;
+  line-height: 54px;
+}
+
+.header-underline {
+  width: 80px;
+  height: 6px;
+  border-radius: 26843500px;
+  background: linear-gradient(180deg, #066eb7 0%, #0fba1e 100%);
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 0.8px solid #e3e5e8;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  background: white;
+}
+
+.course-image {
+  width: 100%;
+  height: 195.59px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.course-content {
+  display: flex;
+  flex-direction: column;
+  height: 276.9px;
+  
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 16px;
+}
+
+.course-info h3 {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a1a1a;
+  line-height: 30px;
+}
+
+.course-info p {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 15px;
+  color: #4a4a4a;
+  line-height: 24px;
+}
+
+.course-badges {
+  display: flex;
+  align-items: center;
+  
+  gap: 12px;
+  width: 100%;
+}
+
+.badge {
+  display: flex;
+  height: 33.1px;
+  align-items: center;
+  gap: 6px;
+  padding-left: 12px;
+  background: #f6f7fa;
+  border-radius: 10px;
+  border: 0.8px solid #e3e5e8;
+}
+
+.badge span {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 500;
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 19.5px;
+}
+
+.badge img {
+  width: 16px;
+  height: 16px;
+}
+
+.course-footer {
+  display: flex;
+  height: 58.8px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 0.8px solid #e3e5e8;
+  padding-top: 16px;
+  direction: ltr;
+}
+
+.add-to-cart {
+  display: flex;
+  height: 41px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0fba1e 0%, #0da91b 100%);
+  border: none;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  opacity: 0.9;
+}
+
+.add-to-cart span {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  line-height: 21px;
+}
+
+.add-to-cart img {
+  width: 16px;
+  height: 16px;
+}
+
+.course-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.currency {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: #777777;
+  line-height: 21px;
+}
+
+.price {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 800;
+  font-size: 28px;
+  color: #0fba1e;
+  line-height: 42px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.pagination-btn {
+  display: flex;
+  height: 44.1px;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 0.8px solid #e3e5e8;
+  background: transparent;
+  cursor: pointer;
+      direction: ltr;
+}
+
+.pagination-btn:hover {
+  background: #f6f7fa;
+}
+
+.pagination-btn span {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 500;
+  font-size: 15px;
+  color: #4a4a4a;
+  line-height: 22.5px;
+}
+
+.pagination-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-num {
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: 1px solid #e3e5e8;
+  background: transparent;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 600;
+  font-size: 15px;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+
+.page-num:hover {
+  background: #f6f7fa;
+}
+
+.page-num.active {
+  background: #066eb7;
+  border-color: #066eb7;
+  color: white;
+}
+
+.courses-blur-1 {
+  position: absolute;
+  top: 0;
+  left: 940px;
+  width: 500px;
+  height: 500px;
+  background: rgba(6, 110, 183, 0.05);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.courses-blur-2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 500px;
+  height: 500px;
+  background: rgba(15, 186, 30, 0.05);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+/* CTA Section */
+.cta-section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 78px 80px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 1) 0%, transparent 0%),
+              linear-gradient(135deg, #066eb7 0%, #055c98 50%, #066eb7 100%);
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  max-width: 656px;
+  position: relative;
+  z-index: 10;
+}
+
+.cta-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.cta-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 21px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  border: 0.8px solid rgba(255, 254, 254, 0.3);
+}
+
+.cta-badge span {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  line-height: 21px;
+}
+
+.cta-badge img {
+  width: 16px;
+  height: 16px;
+}
+
+.cta-text h2 {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 800;
+  font-size: 42px;
+  color: white;
+  text-align: center;
+  line-height: 52.5px;
+}
+
+.cta-text p {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 254, 254, 0.95);
+  text-align: center;
+  line-height: 30.6px;
+}
+
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta-btn-outline {
+  display: flex;
+  width: 299px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: white;
+  border-radius: 14px;
+  border: 1.6px solid #066eb7;
+  box-shadow: 0px 16px 48px rgba(255, 255, 255, 0.2);
+  font-family: 'Cairo', Helvetica;
+  font-weight: 700;
+  font-size: 18px;
+  color: #066eb7;
+  cursor: pointer;
+}
+
+.cta-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.cta-btn-primary {
+  display: flex;
+  width: 236px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 14px;
+  box-shadow: 0px 12px 40px rgba(15, 186, 30, 0.3);
+  background: linear-gradient(135deg, #0fba1e 0%, #0da91b 100%);
+  border: none;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+.cta-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.cta-btn-primary img {
+  width: 20px;
+  height: 20px;
+}
+
+.cta-blur-1 {
+  position: absolute;
+  top: 156px;
+  left: 0;
+  width: 384px;
+  height: 384px;
+  background: rgba(15, 186, 30, 0.2);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.cta-blur-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 384px;
+  height: 384px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 48px;
+  background: linear-gradient(180deg, #055c98 0%, #044a7a 100%);
+  overflow: hidden;
+}
+
+.footer-border {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 64px;
+  pointer-events: none;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  align-items: flex-start;
+  gap: 64px;
+  padding: 0 16px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-columns {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 24px;
+}
+
+.footer-column h3 {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  line-height: 30px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  
+  gap: 16px;
+}
+
+.contact-item span {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 254, 254, 0.7);
+  line-height: 21px;
+}
+
+.contact-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.social-icons {
+  flex: 0 0 auto;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 16px;
+}
+
+.footer-nav a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 254, 254, 0.7);
+  text-decoration: none;
+  line-height: 21px;
+  transition: opacity 0.2s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.8;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #0fba1e;
+  border-radius: 50%;
+}
+
+.footer-column.brand {
+  width: 184px;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 184px;
+  height: 58px;
+  object-fit: cover;
+}
+
+.footer-column.brand p {
+  width: 193px;
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 254, 254, 0.8);
+  line-height: 25.2px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 32.8px;
+  width: 100%;
+  border-top: 0.8px solid rgba(255, 254, 254, 0.1);
+}
+
+.footer-bottom > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.bottom-links a {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 254, 254, 0.6);
+  text-decoration: none;
+  line-height: 21px;
+  transition: color 0.2s;
+}
+
+.bottom-links a:hover {
+  color: white;
+}
+
+.copyright {
+  font-family: 'Cairo', Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 254, 254, 0.6);
+  line-height: 21px;
+}
+
+.footer-blur-1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 384px;
+  height: 384px;
+  background: rgba(15, 186, 30, 0.1);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.footer-blur-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 384px;
+  height: 384px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filter-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .filter-dropdowns {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 24px;
+  }
+  
+  .header-content {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+  
+  .header-left {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero {
+    padding: 32px 24px;
+  }
+  
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    line-height: 54px;
+  }
+  
+  .filter-section {
+    padding: 24px;
+  }
+  
+  .filter-content {
+    padding: 24px;
+  }
+  
+  .courses-section {
+    padding: 48px 24px;
+  }
+  
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-section {
+    padding: 48px 24px;
+  }
+  
+  .cta-text h2 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cta-btn-outline,
+  .cta-btn-primary {
+    width: 100%;
+  }
+  
+  .footer-columns {
+    flex-direction: column;
+    
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="header-buttons">
+                        <button class="login-btn">
+                            <span>تسجيل الدخول</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                                <polyline points="10 17 15 12 10 7"></polyline>
+                                <line x1="15" y1="12" x2="3" y2="12"></line>
+                            </svg>
+                        </button>
+
+                        <div class="header-icons">
+                            <button class="icon-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a4a4a"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
+                            </button>
+
+                            <button class="lang-btn">
+                                <span>EN</span>
+                                <img src="figmaAssets/icon-14.svg" alt="Language" width="20" height="20">
+                            </button>
+                        </div>
+
+                        <div class="search-box">
+                            <input type="text" placeholder="ابحث عن دورة أو معلم...">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#777777"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <nav class="nav-menu">
+                        <a href="#" class="nav-item">الرئيسية</a>
+                        <a href="#" class="nav-item has-dropdown">
+                            من نحن
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#" class="nav-item has-dropdown">
+                            البرامج التعليمية
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#" class="nav-item has-dropdown">
+                            الدعم
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                    </nav>
+                </div>
+
+                <img class="logo" src="figmaAssets/logo-1.png" alt="إديولينك">
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="figmaAssets/imagewithfallback.png" alt="Educational courses" class="hero-image">
+                    </div>
+                    <div class="hero-blur-circle"></div>
+                </div>
+
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="text-blue">الدورات</span>
+                        <span class="text-green">التعليمية</span>
+                    </h1>
+                    <p class="hero-description">
+                        اكتشف مجموعة واسعة من الدورات المصممة لتطوير مهاراتك وتحقيق أهدافك التعليمية.
+                    </p>
+                </div>
+            </div>
+            <div class="hero-bg-blur"></div>
+        </section>
+
+        <!-- Course Filter Section -->
+        <section class="filter-section">
+            <div class="filter-card">
+                <div class="filter-content">
+                    <div class="filter-search">
+                        <input type="text" placeholder="ابحث عن دورة أو معلم...">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#777777" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+
+                    <div class="filter-row">
+                        <div class="filter-buttons">
+                            <button class="reset-btn">
+                                <span>إعادة التعيين</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 4v6h6"></path>
+                                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                                </svg>
+                            </button>
+                            <button class="apply-btn">تطبيق</button>
+                        </div>
+
+                        <div class="filter-dropdowns">
+                            <div class="filter-group">
+                                <label>التصنيف</label>
+                                <select>
+                                    <option>الكل</option>
+                                    <option>علوم الحاسب</option>
+                                    <option>الرياضيات</option>
+                                    <option>العلوم</option>
+                                    <option>اللغات</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>المستوى</label>
+                                <select>
+                                    <option>الكل</option>
+                                    <option>مبتدئ</option>
+                                    <option>متوسط</option>
+                                    <option>متقدم</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>المدة</label>
+                                <select>
+                                    <option>الكل</option>
+                                    <option>أقل من 10 ساعات</option>
+                                    <option>10-20 ساعة</option>
+                                    <option>أكثر من 20 ساعة</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>نوع المحتوى</label>
+                                <select>
+                                    <option>الكل</option>
+                                    <option>فيديو</option>
+                                    <option>مقالات</option>
+                                    <option>تفاعلي</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="courses-section">
+            <div class="courses-container">
+                <div class="section-header">
+                    <h2>جميع الدورات</h2>
+                    <div class="header-underline"></div>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- Course 1 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>الذكاء الاصطناعي</h3>
+                                <p>استكشف عالم الذكاء الاصطناعي وتعلم الآلة</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٣٥ ساعة</span>
+                                        <img src="figmaAssets/icon-2.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متقدم</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٦٩٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-1.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>تطوير الويب الكامل</h3>
+                                <p>احترف تطوير المواقع بتقنيات HTML, CSS, JavaScript</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٢٤ ساعة</span>
+                                        <img src="figmaAssets/icon-2.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متوسط</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-17.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٤٩٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-2.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>مقدمة في علوم الحاسب</h3>
+                                <p>تعلم أساسيات البرمجة وعلوم الحاسب من الصفر</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>١٢ ساعة</span>
+                                        <img src="figmaAssets/icon-2.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>مبتدئ</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٢٩٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-3.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>أمن المعلومات</h3>
+                                <p>تعلم كيفية حماية الأنظمة والبيانات من الاختراق</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٢٠ ساعة</span>
+                                        <img src="figmaAssets/icon-7.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متوسط</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٤٤٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-4.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>قواعد البيانات المتقدمة</h3>
+                                <p>احترف التعامل مع قواعد البيانات SQL وNoSQL</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٢٤ ساعة</span>
+                                        <img src="figmaAssets/icon-7.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متوسط</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٥٤٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-5.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>تصميم تجربة المستخدم</h3>
+                                <p>تعلم أساسيات تصميم واجهات المستخدم وتجربة المستخدم</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>١٨ ساعة</span>
+                                        <img src="figmaAssets/icon-7.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>مبتدئ</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٣٩٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 7 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-6.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>التسويق الرقمي</h3>
+                                <p>تعلم استراتيجيات التسويق عبر الإنترنت ووسائل التواصل</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٢٠ ساعة</span>
+                                        <img src="figmaAssets/icon-2.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متوسط</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٣٤٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 8 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-7.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>الرياضيات المتقدمة</h3>
+                                <p>دورة شاملة في الجبر والتفاضل والتكامل</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٤٠ ساعة</span>
+                                        <img src="figmaAssets/icon-2.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متقدم</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٤٩٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 9 -->
+                    <div class="course-card">
+                        <div class="course-image" style="background-image: url('figmaAssets/herocourses-8.png')"></div>
+                        <div class="course-content">
+                            <div class="course-info">
+                                <h3>تطوير تطبيقات الموبايل</h3>
+                                <p>تعلم تطوير تطبيقات iOS و Android باستخدام React Native</p>
+                                <div class="course-badges">
+                                    <span class="badge">
+                                        <span>٣٠ ساعة</span>
+                                        <img src="figmaAssets/icon-2.svg" alt="Duration">
+                                    </span>
+                                    <span class="badge">
+                                        <span>متوسط</span>
+                                        <img src="figmaAssets/icon.svg" alt="Level">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <button class="add-to-cart">
+                                    <span>أضف للسلة</span>
+                                    <img src="figmaAssets/icon-15.svg" alt="Cart">
+                                </button>
+                                <div class="course-price">
+                                    <span class="currency">ريال</span>
+                                    <span class="price">٥٩٩</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav class="pagination">
+                    <button class="pagination-btn next">
+                        <img src="figmaAssets/icon-8.svg" alt="Next">
+                        <span>التالي</span>
+                    </button>
+
+                    <div class="pagination-numbers">
+                        <button class="page-num">1</button>
+                        <button class="page-num">2</button>
+                        <button class="page-num">3</button>
+                        <button class="page-num">4</button>
+                        <button class="page-num active">5</button>
+                    </div>
+
+                    <button class="pagination-btn prev">
+                        <span>السابق</span>
+                        <img src="figmaAssets/icon-11.svg" alt="Previous">
+                    </button>
+                </nav>
+            </div>
+
+            <div class="courses-blur-1"></div>
+            <div class="courses-blur-2"></div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <span class="cta-badge">
+                        <span>ابدأ رحلتك الآن</span>
+                        <img src="figmaAssets/icon-18.svg" alt="Icon">
+                    </span>
+
+                    <h2>ابدأ رحلتك التعليمية اليوم</h2>
+                    <p>انضم إلى آلاف الطلاب الذين يتعلمون ويطورون مهاراتهم معنا. ابدأ الآن واحصل على شهادة معتمدة.</p>
+                </div>
+
+                <div class="cta-buttons">
+                    <button class="cta-btn-outline">تصفح مسارات التعلم</button>
+                    <button class="cta-btn-primary">
+                        <img src="figmaAssets/icon-32.svg" alt="Icon">
+                        <span>إنشاء حساب</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cta-blur-1"></div>
+            <div class="cta-blur-2"></div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <img class="footer-border" src="figmaAssets/icon-13.svg" alt="Border">
+
+            <div class="footer-content">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h3>اتصل بنا</h3>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <span>+966 12 345 6789</span>
+                                <img src="figmaAssets/container-1.svg" alt="Phone">
+                            </div>
+                            <div class="contact-item">
+                                <span>info@edulink.sa</span>
+                                <img src="figmaAssets/container-2.svg" alt="Email">
+                            </div>
+                            <img src="figmaAssets/frame-11.svg" alt="Social Media" class="social-icons">
+                        </div>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>الدعم الفني</h3>
+                        <nav class="footer-nav">
+                            <a href="#">مركز المساعدة<span class="dot"></span></a>
+                            <a href="#">الأسئلة الشائعة<span class="dot"></span></a>
+                            <a href="#">الإبلاغ عن مشكلة<span class="dot"></span></a>
+                            <a href="#">تواصل معنا<span class="dot"></span></a>
+                        </nav>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>السياسات</h3>
+                        <nav class="footer-nav">
+                            <a href="#">سياسة الخصوصية<span class="dot"></span></a>
+                            <a href="#">شروط الاستخدام<span class="dot"></span></a>
+                            <a href="#">سياسة الاسترجاع<span class="dot"></span></a>
+                            <a href="#">الأحكام والشروط<span class="dot"></span></a>
+                        </nav>
+                    </div>
+
+                    <div class="footer-column brand">
+                        <img src="figmaAssets/logo-1.png" alt="إديولينك" class="footer-logo">
+                        <p>إديولينك منصة تعليمية متكاملة توفر دعما شاملا للطلاب من خلال معلمين متميزين ومحتوى تعليمي
+                            عالي الجودة.</p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-left">
+                        <nav class="bottom-links">
+                            <a href="#">سياسة الخصوصية</a>
+                            <a href="#">الشروط والأحكام</a>
+                        </nav>
+                    </div>
+                    <p class="copyright">© 2024 إديولينك. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+
+            <div class="footer-blur-1"></div>
+            <div class="footer-blur-2"></div>
+        </footer>
+    </div>
+
+    
+</body>
+
+</html>
