@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل في الدورات</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', Helvetica, sans-serif;
+    background-color: #f6f7fa;
+    min-height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 78px 80px;
+    background-color: #f6f7fa;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    flex: 1;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: column;
+    width: 369px;
+    align-items: center;
+    gap: 16px;
+}
+
+.main-title {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 42px;
+    text-align: center;
+    line-height: 63px;
+    direction: rtl;
+}
+
+.subtitle {
+    font-weight: 400;
+    color: #4a4a4a;
+    font-size: 18px;
+    text-align: center;
+    line-height: 27px;
+    direction: rtl;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    max-width: 200px;
+}
+
+.step-icon-wrapper {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    border: 0.8px solid rgba(255, 254, 254, 0.5);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    color: #066eb7;
+}
+
+.step-icon-green {
+    color: #0fba1e;
+}
+
+.step-connector {
+    position: absolute;
+    top: 39px;
+    right: -3px;
+    width: 64px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(6, 110, 183, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+
+.step-label {
+    margin-top: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 16px;
+    text-align: center;
+    line-height: 24px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.course-card {
+    width: 448px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    border: 0.8px solid rgba(255, 254, 254, 0.5);
+    box-shadow: 0px 24px 60px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.course-image {
+    position: relative;
+    width: 100%;
+    height: 257px;
+}
+
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.new-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #0fba1e;
+    border: 0.8px solid rgba(255, 254, 254, 0.5);
+    border-radius: 14px;
+    padding: 8px 17px 1px 17px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    direction: rtl;
+}
+
+.course-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 16px;
+}
+@media (max-width: 1080px) {
+    .step-connector {
+        display: none;
+    }
+}
+.course-title {
+    width: 100%;
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 24px;
+    line-height: 36px;
+    direction: rtl;
+    text-align: right;
+}
+
+.course-meta {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    width: 100%;
+    direction: ltr;
+
+}
+
+.course-stats {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 400;
+    color: #777777;
+    font-size: 14px;
+    line-height: 21px;
+    direction: rtl;
+}
+
+.separator {
+    color: #777777;
+}
+
+.course-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.price-value {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 48px;
+    background: linear-gradient(to left, #066eb7, #0fba1e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    direction: rtl;
+}
+
+.price-currency {
+    font-weight: 400;
+    color: #4a4a4a;
+    font-size: 16px;
+    line-height: 24px;
+    direction: rtl;
+}
+
+.add-to-cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(15, 186, 30, 1) 0%, rgba(13, 169, 27, 1) 100%);
+    box-shadow: 0px 12px 40px rgba(15, 186, 30, 0.3);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    opacity: 0.9;
+}
+
+.add-to-cart-btn span {
+    font-family: 'Cairo', Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    direction: rtl;
+}
+
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-all-link span {
+    font-weight: 600;
+    color: #066eb7;
+    font-size: 14px;
+    line-height: 21px;
+    direction: rtl;
+}
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    color: #066eb7;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 40px 20px;
+    }
+
+    .steps-container {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .step {
+        max-width: 45%;
+    }
+
+    .step-connector {
+        display: none;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 448px;
+    }
+
+    .header-section {
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 32px;
+        line-height: 48px;
+    }
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="content-wrapper">
+            <div class="header-section">
+                <h1 class="main-title">التسجيل في الدورات</h1>
+                <p class="subtitle">ابدأ تعلمك في 4 خطوات بسيطة</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 15.0052C14.9991 14.7094 15.077 14.4187 15.2255 14.163C15.3741 13.9072 15.5881 13.6956 15.8454 13.5499C16.1028 13.4041 16.3944 13.3295 16.6901 13.3337C16.9859 13.3378 17.2752 13.4206 17.5283 13.5735L25.8567 18.5685C26.1046 18.7163 26.3099 18.9259 26.4525 19.1769C26.5951 19.4279 26.6701 19.7116 26.6701 20.0002C26.6701 20.2888 26.5951 20.5725 26.4525 20.8235C26.3099 21.0744 26.1046 21.2841 25.8567 21.4319L17.5283 26.4269C17.275 26.5799 16.9856 26.6626 16.6897 26.6667C16.3938 26.6708 16.1021 26.5961 15.8447 26.4501C15.5873 26.3042 15.3733 26.0923 15.2249 25.8363C15.0764 25.5803 14.9988 25.2894 15 24.9935V15.0052Z"
+                                stroke="#0FBA1E" stroke-width="3.33333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M20 36.6668C29.2048 36.6668 36.6667 29.2049 36.6667 20.0002C36.6667 10.7954 29.2048 3.3335 20 3.3335C10.7953 3.3335 3.33337 10.7954 3.33337 20.0002C3.33337 29.2049 10.7953 36.6668 20 36.6668Z"
+                                stroke="#0FBA1E" stroke-width="3.33333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                    <div class="step-connector"></div>
+                    <span class="step-label">ابدأ التعلم</span>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon-wrapper">
+                        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                            <line x1="2" x2="22" y1="10" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="step-connector"></div>
+                    <span class="step-label">ادفع</span>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 11.6665V34.9998" stroke="#0FBA1E" stroke-width="3.33333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M4.99998 30C4.55795 30 4.13403 29.8244 3.82147 29.5118C3.50891 29.1993 3.33331 28.7754 3.33331 28.3333V6.66667C3.33331 6.22464 3.50891 5.80072 3.82147 5.48816C4.13403 5.17559 4.55795 5 4.99998 5H13.3333C15.1014 5 16.7971 5.70238 18.0474 6.95262C19.2976 8.20286 20 9.89856 20 11.6667C20 9.89856 20.7024 8.20286 21.9526 6.95262C23.2028 5.70238 24.8985 5 26.6666 5H35C35.442 5 35.8659 5.17559 36.1785 5.48816C36.4911 5.80072 36.6666 6.22464 36.6666 6.66667V28.3333C36.6666 28.7754 36.4911 29.1993 36.1785 29.5118C35.8659 29.8244 35.442 30 35 30H25C23.6739 30 22.4021 30.5268 21.4644 31.4645C20.5268 32.4021 20 33.6739 20 35C20 33.6739 19.4732 32.4021 18.5355 31.4645C17.5978 30.5268 16.3261 30 15 30H4.99998Z"
+                                stroke="#0FBA1E" stroke-width="3.33333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                    <div class="step-connector"></div>
+                    <span class="step-label">اختر الكورس</span>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M36.335 16.6666C37.0961 20.4021 36.5537 24.2857 34.7981 27.6696C33.0425 31.0536 30.1798 33.7334 26.6875 35.2622C23.1952 36.791 19.2844 37.0763 15.6071 36.0706C11.9299 35.0649 8.70864 32.829 6.48044 29.7357C4.25225 26.6424 3.15185 22.8787 3.36276 19.0723C3.57366 15.2659 5.08311 11.6468 7.6394 8.8186C10.1957 5.9904 13.6443 4.12403 17.4101 3.53074C21.1759 2.93744 25.0313 3.65308 28.3333 5.55832"
+                                stroke="#066EB7" stroke-width="3.33333" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M15 18.3332L20 23.3332L36.6667 6.6665" stroke="#066EB7" stroke-width="3.33333"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                    <div class="step-connector"></div>
+                    <span class="step-label">اشترك</span>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=500&h=300&fit=crop"
+                        alt="Course">
+                    <span class="new-badge">جديد</span>
+                </div>
+                <div class="course-content">
+                    <h2 class="course-title">دورة تدريبية جديدة</h2>
+
+                    <div class="course-meta">
+                        <div class="course-stats">
+                            <span>٠/٥ طلاب</span>
+                            <span class="separator">•</span>
+                            <span>٠ درس</span>
+                        </div>
+                        <div class="course-price">
+                            <span class="price-value">١٠٠</span>
+                            <span class="price-currency">ريال</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart()">
+                        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="21" r="1"></circle>
+                            <circle cx="19" cy="21" r="1"></circle>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                            </path>
+                        </svg>
+                        <span>أضف للسلة</span>
+                    </button>
+
+                    <a href="#" class="view-all-link">
+                        <span>مشاهدة كل الدورات</span>
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+
+</html>
